@@ -23,10 +23,12 @@ sqlc:
 	sqlc generate
 
 setup:
-	make add_sqlc
-	make add_migrate
 	make postgres
 	make createdb
 	make migrateup
 
-.PHONY: postgres createdb dropdb migrateup migratedown add_migrate add_sqlc sqlc
+add:
+	make add_migrate
+	make add_sqlc
+
+.PHONY: postgres createdb dropdb migrateup migratedown add_migrate add_sqlc sqlc add setup

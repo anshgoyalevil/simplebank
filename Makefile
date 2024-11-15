@@ -34,4 +34,7 @@ add:
 test:
 	go test -v -cover ./...
 
-.PHONY: postgres createdb dropdb migrateup migratedown add_migrate add_sqlc sqlc add setup test
+server:
+	go run main.go
+
+.PHONY: postgres createdb dropdb migrateup migratedown add_migrate add_sqlc sqlc add setup test server
